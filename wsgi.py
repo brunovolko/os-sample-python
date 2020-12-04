@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 application = Flask(__name__)
 
 @application.route("/")
@@ -7,9 +7,9 @@ def hello():
         "saludo": "hola"
     })
 
-#@application.route("/chau", methods=['GET'])
-#def chau():
-#    return render_template('chau.html', saludo="Hasta la proxima")
+@application.route("/chau", methods=['GET'])
+def chau():
+    return render_template('chau.html', saludo="Hasta la proxima")
 
 
 
