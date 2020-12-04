@@ -3,7 +3,15 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    return "Hello IBM!"
+	return jsonify({
+        'saludo': "hola"
+    })
+
+@app.route("/chau", methods=['GET'])
+def chau():
+    return render_template('chau.html', saludo="Hasta la proxima")
+
+
 
 if __name__ == "__main__":
     application.run()
