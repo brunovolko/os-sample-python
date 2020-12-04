@@ -4,10 +4,10 @@ application = Flask(__name__)
 @application.route("/")
 def hello():
 	return jsonify({
-        'saludo': "hola"
+        "saludo": "hola"
     })
 
-@app.route("/chau", methods=['GET'])
+@application.route("/chau", methods=['GET'])
 def chau():
     return render_template('chau.html', saludo="Hasta la proxima")
 
